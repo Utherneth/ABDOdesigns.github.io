@@ -77,12 +77,6 @@ app.delete('/users/:email', (req, res) => {
   res.status(204).send();
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
 // Example usage:
 // GET http://localhost:3000/users
 // POST http://localhost:3000/users with JSON body: { name: 'John Doe',

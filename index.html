@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="img/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300">
   </head>
   <body>
     <div class="hero">
@@ -24,7 +25,7 @@
 
       <div class="content">
         <span class="title">Freelancer graphic designer</span>
-        <h1>Hello, I’m <span>abdo</span></h1>
+        <h1>Hello, I’m <span>RB</span>1</h1>
         <p>
           I'm making my own designs like logos,social media posts, ads designs, thumbnails, business cards, photo editing...
         </p>
@@ -33,13 +34,24 @@
     </div>
     <br>
     <br>
+    <marquee
+    behavior="scroll"
+    direction="right"
+    scrollamount="7"
+    scrolldelay="1"
+    onmouseover="this.stop()"
+    onmouseout="this.start()"
+    >
+    <img src="img/logo001.png" alt="logo" width="100" height="100">
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 36px; color: #FF69B4; font-weight: 300;">GUCCI</span>
+</marquee>
     <div class="services">
       <h2 id="services">My Services</h2>
       <br>
       <div class="service-item">
-        <img src="img/service1.jpg" alt="service1" />
+        <img src="/img/service1.jpg" alt="service1" height="255px" width="255px"/>
         <h3>Logo Design</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod velit id ligula gravida, ac ullamcorper mauris malesuada.</p>
+        <p></p>
       </div>
       <div class="service-item">
         <img src="img/service2.jpg" alt="service2" />
@@ -90,19 +102,87 @@
      <!--\end{code}-->
     </div>
 
+    <style>
+      /* add some basic styling for the modal window */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    
+      .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 80%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+    
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+    
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    
+      #modal-img {
+        width: 50%; /* adjust the width of the image */
+        height: auto; /* adjust the height of the image */
+        margin: 0 auto; /* center the image */
+      }
+    </style>
+    
     <div class="wrapper">
       <h2 id="ma design">My Work</h2>
       <br>
       <br>
       <div class="gallery">
-        <img src="img/work1.jpg" height="300" width="260" alt="work1">
-        <img src="img/work2.jpg"  height="300" width="260" alt="work2">
-        <img src="img/work3.jpg" height="300" width="260" alt="work3">
-        <img src="img/work4.jpg" height="300" width="260" alt="work4">
-        <img src="img/work5.jpg" height="300" width="260" alt="work5">
+        <img src="img/work1.jpg" height="300" width="260" alt="work1" onclick="openModal(this.src)">
+        <img src="img/work2.jpg"  height="300" width="260" alt="work2" onclick="openModal(this.src)">
+        <img src="img/work3.jpg" height="300" width="260" alt="work3" onclick="openModal(this.src)">
+        <img src="img/work4.jpg" height="300" width="260" alt="work4" onclick="openModal(this.src)">
+        <img src="img/work5.jpg" height="300" width="260" alt="work5" onclick="openModal(this.src)">
         <br>
-       <!--end code-->
       </div>
+    
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Enlarged Image">
+      </div>
+    </div>
+    
+    <script>
+      function openModal(src) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("modal-img").src = src;
+      }
+    
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    </script>
+
+
+
+
+
        <a href="https://wa.me/0621400691"
         class="btn" target="_blank">order your own design</a>
 
@@ -146,7 +226,7 @@
     <h2>Testimonials</h2>
     <div class="testimonials">
       <div class="testimonial">
-        <img src="img/user1.jpg" height="70" width="70  alt="user1" />
+        <img src="img/Www.png" height="70" width="70  alt="user1" />
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod velit id ligula gravida, ac ullamcorper mauris malesuada. Quisque tincidunt turpis vel ipsum commodo, id varius lectus mattis.</p>
         <span></span>
       </div>
@@ -165,18 +245,26 @@
       <h2 id="Cntct"> Contact me </h2>
     <style>
   form {
-    background-image: url('img/bk.png');
-    background-size: cover;
+    background: rgba(0,0,0,0.5);
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     opacity: 0.5;
     padding: 20px;
     width: 300px; /* adjust the width to your liking */
     height: 400px; /* adjust the height to your liking */
     margin: 40px auto; /* center the form horizontally */
-    border-radius: 10px; /* add a slight rounded corner effect */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a slight shadow effect */
+    border-radius: 30px; /* add a slight rounded corner effect */
+    filter: drop-shadow(
+      3px 5px 5px rgba(184, 28, 61, 0.5)
+      
+      );
+      }
+      label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+      
+    
     font-family: Arial, sans-serif;
     color: #333;
     text-align: center;
@@ -189,13 +277,13 @@
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #fff; /* make the input fields white */
     border-bottom: 2px solid #ccc;
   }
 
   input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    border-bottom: 2px solid #666;
+    border-bottom: 2px solid #87ffd7bd;
   }
 
   textarea {
@@ -206,15 +294,17 @@
   input[type="submit"] {
     width: 90%; /* make the submit button slightly narrower */
     padding: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
+    background-color: #41cf45;
+    color: #000000;
+    border: 2px solid #41cf45;
     border-radius: 10px;
     cursor: pointer;
   }
 
   input[type="submit"]:hover {
-    background-color: #3e8e41;
+    background: transparent;
+    color: #41cf45;
+    border-color: #41cf45;
   }
 </style>
 
@@ -270,6 +360,7 @@
 
     </script> <!-- link to script.js file -->
     <!--script src="script.js"></script> link to script.js file --> <!-- link to script.js file -->
-
+  <!-- Add a div element to displaythe loading animation -->
+  
   </body>
 </html>
